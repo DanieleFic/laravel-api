@@ -20,8 +20,9 @@ class PostController extends Controller
         'title' => 'required|max:255',
         "author"=>"required|string|max:50",
         'content' => 'required',
-        'category_id' => 'nullable|exists:categories,id',
-        'tags'=>'required'
+        'category_id' => 'nullable|exists:categories,id', //deve esistere come id nella tabella categories
+        'tags.*'=>'required'
+        //.* valida tutti gli elementi dell array
     ];
     /**
      * Display a listing of the resource.
@@ -31,6 +32,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        $categories = Category::all();
 
         return view('admin.posts.index', compact('posts')); 
     }

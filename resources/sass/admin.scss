@@ -9,9 +9,11 @@
 
 @import '~bootstrap-icons/font/bootstrap-icons';
 
+/* importiamo l'scss del index */
 @import 'partials/_index';
+/* importiamo l'scss del create */
 @import 'partials/_create';
-
+/* importiamo l'scss dello show */
 @import 'partials/_show';
 
 .ms_container{
